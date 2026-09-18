@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">TV Browser</string>
+    <string name="hint_url">Nhập địa chỉ web (vd: google.com)</string>
+    <string name="btn_go">Đi</string>
+    <string name="btn_back">Lùi</string>
+    <string name="btn_forward">Tới</string>
+    <string name="btn_reload">Tải lại</string>
+    <string name="btn_home">Trang chủ</string>
+    <string name="default_home_url">https://www.google.com</string>
+</resources>

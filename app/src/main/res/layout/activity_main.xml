@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/background_dark">
+
+    <!-- Thanh công cụ: nút điều hướng + ô nhập URL -->
+    <LinearLayout
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="64dp"
+        android:orientation="horizontal"
+        android:background="@color/toolbar_bg"
+        android:paddingHorizontal="12dp"
+        android:paddingVertical="8dp"
+        android:gravity="center_vertical">
+
+        <Button
+            android:id="@+id/btnBack"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="@string/btn_back"
+            android:background="@drawable/btn_tv_selector"
+            android:textColor="@color/text_primary"
+            android:focusable="true"
+            android:nextFocusRight="@id/btnForward" />
+
+        <Button
+            android:id="@+id/btnForward"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginStart="8dp"
+            android:text="@string/btn_forward"
+            android:background="@drawable/btn_tv_selector"
+            android:textColor="@color/text_primary"
+            android:focusable="true"
+            android:nextFocusLeft="@id/btnBack"
+            android:nextFocusRight="@id/btnReload" />
+
+        <Button
+            android:id="@+id/btnReload"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginStart="8dp"
+            android:text="@string/btn_reload"
+            android:background="@drawable/btn_tv_selector"
+            android:textColor="@color/text_primary"
+            android:focusable="true"
+            android:nextFocusLeft="@id/btnForward"
+            android:nextFocusRight="@id/btnHome" />
+
+        <Button
+            android:id="@+id/btnHome"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginStart="8dp"
+            android:text="@string/btn_home"
+            android:background="@drawable/btn_tv_selector"
+            android:textColor="@color/text_primary"
+            android:focusable="true"
+            android:nextFocusLeft="@id/btnReload"
+            android:nextFocusRight="@id/editUrl" />
+
+        <EditText
+            android:id="@+id/editUrl"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:layout_marginStart="8dp"
+            android:hint="@string/hint_url"
+            android:textColorHint="@color/text_hint"
+            android:textColor="@color/text_primary"
+            android:singleLine="true"
+            android:imeOptions="actionGo"
+            android:inputType="textUri"
+            android:background="@drawable/btn_tv_selector"
+            android:paddingHorizontal="12dp"
+            android:focusable="true"
+            android:nextFocusLeft="@id/btnHome"
+            android:nextFocusRight="@id/btnGo" />
+
+        <Button
+            android:id="@+id/btnGo"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginStart="8dp"
+            android:text="@string/btn_go"
+            android:background="@drawable/btn_tv_selector"
+            android:textColor="@color/text_primary"
+            android:focusable="true"
+            android:nextFocusLeft="@id/editUrl" />
+    </LinearLayout>
+
+    <!-- Thanh tiến trình tải trang -->
+    <ProgressBar
+        android:id="@+id/progressBar"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="match_parent"
+        android:layout_height="4dp"
+        android:max="100"
+        android:visibility="gone" />
+
+    <!-- Khu vực hiển thị nội dung web -->
+    <WebView
+        android:id="@+id/webView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1" />
+
+</LinearLayout>
